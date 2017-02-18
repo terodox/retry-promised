@@ -1,0 +1,35 @@
+{
+  "name": "promised-retry",
+  "version": "1.0.0",
+  "description": "A library for retyring promises allowing deep inspection of errors for retry.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terodox/promised-retry.git"
+  },
+  "keywords": [
+    "promise",
+    "retry",
+    "promised",
+    "error",
+    "retryable",
+    "deep"
+  ],
+  "author": "Andy Desmarais <terodox@gmail.com> (https://github.com/terodox)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/terodox/promised-retry/issues"
+  },
+  "homepage": "https://github.com/terodox/promised-retry#readme",
+  "engines": {
+    "node": ">=4.3"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "3.2.0",
+    "chai": "3.5.0"
+  }
+}
