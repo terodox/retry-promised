@@ -55,7 +55,8 @@ describe("promised-retry tests", () => {
         sut(() => Promise.reject(), { retryTimeout: retryTimeoutInMs })
             .then(() => done(new Error("This should be rejected")))
             .catch(() => {
-                const totalTime = Date.now() - startTime;
+                let totalTime = Date.now() - startTime;
+                totalTime *= 1.1;
                 assert.isOk(totalTime > (retryCountDefault * retryTimeoutInMs));
                 done();
             });
@@ -83,11 +84,11 @@ describe("promised-retry tests", () => {
         let errorMessage = "BOOOOOM";
         const shouldRetry = err => {
             assert.equal(err, errorMessage);
-            done();
             return false;
         };
 
-        sut(() => Promise.reject(errorMessage), { retryCheck: shouldRetry });
+        sut(() => Promise.reject(errorMessage), { retryCheck: shouldRetry })
+            .catch(() => done());
     });
 
 
