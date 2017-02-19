@@ -1,5 +1,5 @@
 {
-  "name": "promised-retry",
+  "name": "retry-promised",
   "version": "1.0.0",
   "description": "A library for retyring promises allowing deep inspection of errors for retry.",
   "main": "index.js",
