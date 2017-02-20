@@ -15,8 +15,7 @@ module.exports = function(promiseToRetryFunction, options) {
                 .catch(err => {
                     if(!options.retryCheck(err)) {
                         reject(err);
-                    }
-                    if(remainingAttempts > 0) {
+                    } else if(remainingAttempts > 0) {
                         if(!firstAttempt) {
                             waitTime *= options.timeoutMultiplier;
                         }
